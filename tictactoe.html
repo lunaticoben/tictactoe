@@ -1,1 +1,57 @@
-testing
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html {
+                background-color: darkslategray;
+                font-family: sans-serif;
+            }
+            h1 {
+                text-align: center;
+            }
+            .grid-container {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                background-color: rgb(0, 0, 0);
+                max-width: 70vw;
+                border: 5px solid rgb(0, 0, 0);
+                margin: auto;
+                justify-content: center;
+            }
+            .grid-item {
+                background-color: rgba(108, 200, 253, 0.8);
+                border: 5px solid rgb(0, 0, 0);
+                height: 20vh;
+                width: 21vw;
+                font-size: 100px;
+                text-align: center;
+                line-height: 20vh;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Tic Tac Toe</h1>
+        <div class="grid-container">
+            <div id="grid1" class="grid-item" onclick="changeText(this)"></div>
+            <div id="grid2" class="grid-item"></Obj></div>
+            <div id="grid3" class="grid-item"></div>
+            <div id="grid4" class="grid-item"></div>
+            <div id="grid5" class="grid-item"></div>
+            <div id="grid6" class="grid-item"></div>
+            <div id="grid7" class="grid-item"></div>
+            <div id="grid8" class="grid-item"></div>
+            <div id="grid9" class="grid-item"></div>
+        </div>
+        <script>
+            function changeText(id) {
+                id.innerHTML = "X";
+            }
+
+            document.getElementById("grid1").addEventListener("onmouseover").css("background-color")?????;
+
+            function changeColor(id) {
+                id.changeColor = rgba(108, 200, 253, 0.8);
+            }
+        </script>
+    </body>
+</html>
