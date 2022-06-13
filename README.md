@@ -1,5 +1,5 @@
 # tictactoe
-My first Javascript project, a tic tac toe game
+My first Javascript project completed from start to finish by myself, a tic tac toe game
 
 # Objectives
 - create layout for the game using html Grid
