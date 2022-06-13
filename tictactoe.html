@@ -1,57 +1,47 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <style>
-            html {
-                background-color: darkslategray;
-                font-family: sans-serif;
-            }
-            h1 {
-                text-align: center;
-            }
-            .grid-container {
-                display: grid;
-                grid-template-columns: auto auto auto;
-                background-color: rgb(0, 0, 0);
-                max-width: 70vw;
-                border: 5px solid rgb(0, 0, 0);
-                margin: auto;
-                justify-content: center;
-            }
-            .grid-item {
-                background-color: rgba(108, 200, 253, 0.8);
-                border: 5px solid rgb(0, 0, 0);
-                height: 20vh;
-                width: 21vw;
-                font-size: 100px;
-                text-align: center;
-                line-height: 20vh;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Tic Tac Toe</h1>
-        <div class="grid-container">
-            <div id="grid1" class="grid-item" onclick="changeText(this)"></div>
-            <div id="grid2" class="grid-item"></Obj></div>
-            <div id="grid3" class="grid-item"></div>
-            <div id="grid4" class="grid-item"></div>
-            <div id="grid5" class="grid-item"></div>
-            <div id="grid6" class="grid-item"></div>
-            <div id="grid7" class="grid-item"></div>
-            <div id="grid8" class="grid-item"></div>
-            <div id="grid9" class="grid-item"></div>
-        </div>
-        <script>
-            function changeText(id) {
-                id.innerHTML = "X";
-            }
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TicTacToe Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-            document.getElementById("grid1").addEventListener("onmouseover").css("background-color")?????;
+  <body>
+    <h1>Tic Tac Toe</h1>
 
-            function changeColor(id) {
-                id.changeColor = rgba(108, 200, 253, 0.8);
-            }
-        </script>
-    </body>
+    <div class="container" id="container">
+      <div class="grid-item" id="grid1"></div>
+      <div class="grid-item" id="grid2"></div>
+      <div class="grid-item" id="grid3"></div>
+      <div class="grid-item" id="grid4"></div>
+      <div class="grid-item" id="grid5"></div>
+      <div class="grid-item" id="grid6"></div>
+      <div class="grid-item" id="grid7"></div>
+      <div class="grid-item" id="grid8"></div>
+      <div class="grid-item" id="grid9"></div>
+    </div>
+
+    <div class="buttons">
+      <button class="reset-btn" id="reset-btn">Reset</button>
+    </div>
+
+    <footer class="footer">
+      <p>
+        (c) lunaticoben 2022<br />
+        <a href="mailto:cachondoben@gmail.com">cachondoben@gmail.com</a>
+      </p>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal-container" id="modal-container">
+      <div class="modal" id="modal">
+        Player X Goes First! :)<br />
+        Click anywhere to begin!
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
