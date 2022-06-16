@@ -13,7 +13,14 @@ const reset = document.getElementById('reset-btn');
 const modalContainer = document.getElementById('modal-container');
 const modal = document.getElementById('modal');
 
+const playerX = document.getElementById('playerx');
+const playerO = document.getElementById('playero');
+const playerXScore = document.getElementById('playerx-score');
+const playerOScore = document.getElementById('playero-score');
+
 let whosTurn = 1;
+let Xscore = 0;
+let Oscore = 0;
 
 // Hide start modal
 function hideStartModal() {
@@ -26,8 +33,12 @@ function addLetter(e) {
   if (e.path[0].innerHTML === '') {
     if (whosTurn % 2 === 0) {
       e.path[0].innerHTML = 'O';
+      playerX.style.color = '#49fb35';
+      playerO.style.color = '#dedede';
     } else {
       e.path[0].innerHTML = 'X';
+      playerO.style.color = '#49fb35';
+      playerX.style.color = '#dedede';
     }
   whosTurn++;
   checkWinner();
@@ -48,6 +59,11 @@ function checkWinner() {
     if (gridOne.innerHTML === gridTwo.innerHTML && gridTwo.innerHTML === gridThree.innerHTML) {
       modalContainer.style.display = "block";
       modal.innerHTML = `Player ${gridOne.innerHTML} is the winner!!!! :)<br />Click anywhere to play again...`;
+      if (gridOne.innerHTML === 'X') {
+        Xscore++;
+      } else {
+        Oscore++;
+      }
     } 
   }
 
@@ -56,6 +72,11 @@ function checkWinner() {
     if (gridFour.innerHTML === gridFive.innerHTML && gridFive.innerHTML === gridSix.innerHTML) {
       modalContainer.style.display = "block";
       modal.innerHTML = `Player ${gridFour.innerHTML} is the winner!!!! :)<br />Click anywhere to play again...`;
+      if (gridFour.innerHTML === 'X') {
+        Xscore++;
+      } else {
+        Oscore++;
+      }
     } 
   }
 
@@ -64,6 +85,11 @@ function checkWinner() {
     if (gridSev.innerHTML === gridEig.innerHTML && gridEig.innerHTML === gridNine.innerHTML) {
       modalContainer.style.display = "block";
       modal.innerHTML = `Player ${gridSev.innerHTML} is the winner!!!! :)<br />Click anywhere to play again...`;
+      if (gridSev.innerHTML === 'X') {
+        Xscore++;
+      } else {
+        Oscore++;
+      }
     } 
   }
 
@@ -72,6 +98,11 @@ function checkWinner() {
     if (gridOne.innerHTML === gridFour.innerHTML && gridFour.innerHTML === gridSev.innerHTML) {
       modalContainer.style.display = "block";
       modal.innerHTML = `Player ${gridOne.innerHTML} is the winner!!!! :)<br />Click anywhere to play again...`;
+      if (gridOne.innerHTML === 'X') {
+        Xscore++;
+      } else {
+        Oscore++;
+      }
     } 
   }
 
@@ -80,6 +111,11 @@ function checkWinner() {
     if (gridTwo.innerHTML === gridFive.innerHTML && gridFive.innerHTML === gridEig.innerHTML) {
       modalContainer.style.display = "block";
       modal.innerHTML = `Player ${gridTwo.innerHTML} is the winner!!!! :)<br />Click anywhere to play again...`;
+      if (gridTwo.innerHTML === 'X') {
+        Xscore++;
+      } else {
+        Oscore++;
+      }
     } 
   }
 
@@ -88,6 +124,11 @@ function checkWinner() {
     if (gridThree.innerHTML === gridSix.innerHTML && gridSix.innerHTML === gridNine.innerHTML) {
       modalContainer.style.display = "block";
       modal.innerHTML = `Player ${gridThree.innerHTML} is the winner!!!! :)<br />Click anywhere to play again...`;
+      if (gridThree.innerHTML === 'X') {
+        Xscore++;
+      } else {
+        Oscore++;
+      }
     } 
   }
 
@@ -96,6 +137,11 @@ function checkWinner() {
     if (gridOne.innerHTML === gridFive.innerHTML && gridFive.innerHTML === gridNine.innerHTML) {
       modalContainer.style.display = "block";
       modal.innerHTML = `Player ${gridOne.innerHTML} is the winner!!!! :)<br />Click anywhere to play again...`;
+      if (gridOne.innerHTML === 'X') {
+        Xscore++;
+      } else {
+        Oscore++;
+      }
     } 
   }
 
@@ -104,8 +150,20 @@ function checkWinner() {
     if (gridThree.innerHTML === gridFive.innerHTML && gridFive.innerHTML === gridSev.innerHTML) {
       modalContainer.style.display = "block";
       modal.innerHTML = `Player ${gridThree.innerHTML} is the winner!!!! :)<br />Click anywhere to play again...`;
+      if (gridThree.innerHTML === 'X') {
+        Xscore++;
+      } else {
+        Oscore++;
+      }
     } 
   }
+  updateScores();
+}
+
+// Update scores
+function updateScores() {
+  playerXScore.innerHTML = Xscore;
+  playerOScore.innerHTML = Oscore;
 }
 
 // Reset game
@@ -114,6 +172,8 @@ function resetGame() {
     grid.childNodes[i].innerHTML = '';
   }
   whosTurn = 1;
+  playerX.style.color = '#49fb35';
+  playerO.style.color = '#dedede';
 }
 
 

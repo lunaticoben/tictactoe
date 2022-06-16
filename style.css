@@ -26,6 +26,7 @@ body {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   max-width: 500px;
   max-height: 500px;
+  border-radius: 5px;
 }
 .grid-item {
   cursor: pointer;
@@ -39,20 +40,31 @@ body {
 }
 
 .buttons {
-  margin-top: 20px;
+  background-color: #5e5e5e;
+  border: 5px solid #5e5e5e;
+  grid-column: 1 / span 3;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 70%;
 }
 
 .reset-btn {
   cursor: pointer;
-  /* background-color: #000; */
+  background-color: #dedede;
   /* color: #fff; */
   border: 0;
+  margin: 0 20px;
   font-size: 16px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.score {
+  color: #dedede;
+}
+
+.score[id='playerx'] {
+  color: #49fb35;
 }
 
 .footer {
